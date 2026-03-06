@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Picking Challenge | Prehmus Financial</title>
+    <meta name="description" content="Can you beat the S&P 500? Pick 5 stocks from a historic year and find out." />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body { background: #071629; }
+    </style>
+
+    <!-- Netlify Forms: hidden form so Netlify detects the fields at deploy time -->
+    <form name="stock-game-leads" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input name="bot-field" />
+      <input name="firstName" />
+      <input name="lastName" />
+      <input name="email" />
+      <input name="confidence" />
+    </form>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
