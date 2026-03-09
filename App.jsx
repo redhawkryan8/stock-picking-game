@@ -224,6 +224,7 @@ export default function StockPickingGame() {
       return { ...stock, score, verdict, dollarValue };
     });
     // Equal-weight portfolio: average return of 5 picks
+    details.sort((a, b) => b.score - a.score);
     const equalWeightReturn = Math.round(details.reduce((sum, s) => sum + s.return, 0) / details.length);
     // Total $100K value
     const totalDollarValue = details.reduce((sum, s) => sum + s.dollarValue, 0);
@@ -468,7 +469,7 @@ export default function StockPickingGame() {
             <div style={{ fontSize: 13, color: equalWeightReturn >= sp500 ? "#10b981" : equalWeightReturn >= 0 ? "#f59e0b" : "#ef4444", marginTop: 4 }}>
               Your Equal-Weight Portfolio: {equalWeightReturn >= 0 ? "+" : ""}{equalWeightReturn}% avg return
             </div>
-            <div style={{ fontSize: 14, color: totalDollarValue >= 100000 ? "#10b981" : "#ef4444", marginTop: 4, fontWeight: 700, fontFamily: "Calibri, sans-serif" }}>
+            <div style={{ fontSize: 14, fontSize: 13, color: "#5A7A9A", marginTop: 4 }}>
               $100K invested equally → <span style={{ fontSize: 18 }}>${totalDollarValue.toLocaleString()}</span>
             </div>
           </div>
